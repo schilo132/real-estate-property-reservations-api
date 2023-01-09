@@ -24,6 +24,10 @@ def random_unique_code():
 
 class Property(models.Model):
 
+    # Fix plural on admin panel
+    class Meta:
+        verbose_name_plural = "properties"
+
     # Fields per specification: Property code;
     code = models.IntegerField(
         null=False,

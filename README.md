@@ -27,6 +27,8 @@ Every Announcement instance is associated with only one Property instance and ev
 
 ### Setup
 
+#### Linux
+
 Run the following commands in the project's root folder to prepare the virtual environment:
 - `python3 -m venv venv`
 - `source venv/bin/activate`
@@ -35,16 +37,16 @@ Install the dependencies:
 - `pip install -r requirements.txt`
 
 Start the database and create a superuser:
-- `python manage.py migrate`
-- `python manage.py createsuperuser`
+- `python3 manage.py migrate`
+- `python3 manage.py createsuperuser`
 
 Setup the database and load the fixtures to provide initial data:
-- `python manage.py makemigrations khanto`
-- `python manage.py migrate`
-- `./manage.py loaddata fixtures.json`
+- `python3 manage.py makemigrations khanto`
+- `python3 manage.py migrate`
+- `python3 loaddata fixtures.json`
 
 Start the server:
-- `python manage.py runserver`
+- `python3 manage.py runserver`
 
 The API may now be accessed at http://127.0.0.1:8000/. **Go to http://127.0.0.1:8000/admin and log in with your superuser credentials to authenticate before using the API.**
 
