@@ -1,0 +1,35 @@
+[
+    {
+        "model":"khanto.advertisement",
+        "pk":1,
+        "fields":{
+            "property":1,
+            "platform":"TestPlatform1",
+            "platform_tax":"50.00",
+            "creation_date":"2023-01-05T20:33:36.345Z",
+            "update_date":"2023-01-05T20:33:36.345Z"
+        }
+    },
+    {
+        "model":"khanto.advertisement",
+        "pk":2,
+        "fields":{
+            "property":1,
+            "platform":"TestPlatform2",
+            "platform_tax":"30.00",
+            "creation_date":"2023-01-05T20:33:48.596Z",
+            "update_date":"2023-01-05T20:33:48.596Z"
+        }
+    },
+    {
+        "model":"khanto.advertisement",
+        "pk":3,
+        "fields":{
+            "property":2,
+            "platform":"TestPlatform1",
+            "platform_tax":"40.00",
+            "creation_date":"2023-01-05T20:33:58.345Z",
+            "update_date":"2023-01-05T20:33:58.345Z"
+        }
+    }
+]
