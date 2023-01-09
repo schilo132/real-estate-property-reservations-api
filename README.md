@@ -13,26 +13,26 @@ Every Announcement instance is associated with only one Property instance and ev
 | /admin/ |   | Admin panel |
 | /properties/ | GET | Search list of Property instances |
 | /properties/ | POST | Add new Property instance |
-| /properties/{id}  | GET  | Search Property instance by ID  |
-| /properties/{id} | PUT | Edit Property instance by ID  |
+| /properties/{id} | GET | Search Property instance by ID |
+| /properties/{id} | PUT | Edit Property instance by ID |
 | /properties/{id} | DELETE | Delete Property instance by ID |
 | /advertisements/ | GET | Search list of Advertisement instances |
 | /advertisements/ | POST | Add new Advertisement instance |
-| /advertisements/{id}  | GET  | Search Advertisement instance by ID  |
+| /advertisements/{id}  | GET | Search Advertisement instance by ID |
 | /advertisements/{id} | PUT | Edit Advertisement instance by ID  |
 | /reservations/ | GET | Search list of Reservation instances |
 | /reservations/ | POST | Add new Reservation instance |
-| /reservations/{id}  | GET  | Search Reservation instance by ID  |
-| /reservations/{id} | DELETE | Delete Reservation instance by ID  |
+| /reservations/{id} | GET  | Search Reservation instance by ID |
+| /reservations/{id} | DELETE | Delete Reservation instance by ID |
 
 ### Setup
 
-Run the following commands in the project's root folder to prepare the environment:
-- `virtualenv venv --python=/usr/bin/python3.8`
+Run the following commands in the project's root folder to prepare the virtual environment:
+- `python3 -m venv venv`
 - `source venv/bin/activate`
-- `pip install django`
-- `pip install djangorestframework`
-- `pip install django-filter`
+
+Install the dependencies:
+- `pip install -r requirements.txt`
 
 Start the database and create a superuser:
 - `python manage.py migrate`
