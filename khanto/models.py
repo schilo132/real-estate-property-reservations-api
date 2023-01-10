@@ -39,18 +39,18 @@ class Property(models.Model):
     guest_vacancies = models.IntegerField(
         null=False,
         blank=False,
-        default=0,
         validators=[MinValueValidator(1)])
 
     # Number of bathrooms;
     bathrooms = models.IntegerField(
         null=False,
         blank=False,
-        default=0,
         validators=[MinValueValidator(1)])
 
     # Wheter pets are allowed or not;
-    pets_allowed = models.BooleanField(default=False)
+    pets_allowed = models.BooleanField(
+        null=False,
+        blank=False)
 
     # Cleaning cost;
     cleaning_cost = models.DecimalField(
@@ -61,13 +61,22 @@ class Property(models.Model):
         validators=[MinValueValidator(Decimal('0.01'))])
 
     # Activation date;
-    activation_date = models.DateField(auto_now_add=True)
+    activation_date = models.DateField(
+        auto_now_add=True,
+        null=False,
+        blank=False)
 
     # Creation date and time;
-    creation_date = models.DateTimeField(auto_now_add=True)
+    creation_date = models.DateTimeField(
+        auto_now_add=True,
+        null=False,
+        blank=False)
 
     # Update date and time.
-    update_date = models.DateTimeField(auto_now=True)
+    update_date = models.DateTimeField(
+        auto_now=True,
+        null=False,
+        blank=False)
 
     def __str__(self):
         return "Property " + str(self.id)
@@ -77,6 +86,8 @@ class Advertisement(models.Model):
     # Per specification, a property may have multiple advertisements, but an advertisement may only refer to one property.
     property = models.ForeignKey(
         Property,
+        null=False,
+        blank=False,
         on_delete=models.CASCADE)
 
     # Further fields per specification: Advertisement hosting platform;
@@ -94,10 +105,16 @@ class Advertisement(models.Model):
         validators=[MinValueValidator(Decimal('0.01'))])
 
     # Creation date and time (set automatically);
-    creation_date = models.DateTimeField(auto_now_add=True)
+    creation_date = models.DateTimeField(
+        auto_now_add=True,
+        null=False,
+        blank=False)
 
     # Update date and time (set automatically).
-    update_date = models.DateTimeField(auto_now=True)
+    update_date = models.DateTimeField(
+        auto_now=True,
+        null=False,
+        blank=False)
 
     def __str__(self):
         return "Advertisement " + str(self.id)
@@ -107,19 +124,27 @@ class Reservation(models.Model):
     # Per specification, an announcement may have multiple reservations, but a reservation may only refer to one advertisement.
     advertisement = models.ForeignKey(
         Advertisement,
+        null=False,
+        blank=False,
         on_delete=models.CASCADE)
 
     # Further fields per specification: Reservation code (randomly generated, see random_unique_code() above);
     code = models.IntegerField(
         unique=True,
         default=random_unique_code,
+        null=False,
+        blank=False,
         validators=[MinValueValidator(1)])
 
     # Check-in date;
-    checkin_date = models.DateField()
+    checkin_date = models.DateField(
+        null=False,
+        blank=False)
 
     # Check-out date;
-    checkout_date = models.DateField()
+    checkout_date = models.DateField(
+        null=False,
+        blank=False)
 
     # Total cost;
     total_cost = models.DecimalField(
@@ -139,14 +164,19 @@ class Reservation(models.Model):
     guests = models.IntegerField(
         null=False,
         blank=False,
-        default=0,
         validators=[MinValueValidator(1)])
 
     # Creation date and time (set automatically);
-    creation_date = models.DateTimeField(auto_now_add=True)
+    creation_date = models.DateTimeField(
+        auto_now_add=True,
+        null=False,
+        blank=False)
 
     # Update date and time (set automatically).
-    update_date = models.DateTimeField(auto_now=True)
+    update_date = models.DateTimeField(
+        auto_now=True,
+        null=False,
+        blank=False)
 
     def __str__(self):
         return "Reservation " + str(self.id)

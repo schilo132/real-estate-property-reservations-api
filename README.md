@@ -53,4 +53,4 @@ The API may now be accessed at http://127.0.0.1:8000/. **Go to http://127.0.0.1:
 ### Testing
 
 Run the following command in the project's root folder:
-- `python manage.py test`
+- `python3 manage.py test`
