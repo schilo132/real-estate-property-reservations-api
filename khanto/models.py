@@ -56,7 +56,7 @@ class Property(models.Model):
     cleaning_cost = models.DecimalField(
         null=False,
         blank=False,
-        max_digits=5,
+        max_digits=15,
         decimal_places=2,
         validators=[MinValueValidator(Decimal('0.01'))])
 
@@ -100,7 +100,7 @@ class Advertisement(models.Model):
     platform_tax = models.DecimalField(
         null=False,
         blank=False,
-        max_digits=5,
+        max_digits=15,
         decimal_places=2,
         validators=[MinValueValidator(Decimal('0.01'))])
 
@@ -150,7 +150,7 @@ class Reservation(models.Model):
     total_cost = models.DecimalField(
         null=False,
         blank=False,
-        max_digits=5,
+        max_digits=15,
         decimal_places=2,
         validators=[MinValueValidator(Decimal('0.01'))])
 

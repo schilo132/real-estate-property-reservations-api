@@ -43,7 +43,7 @@ Start the database and create a superuser:
 Setup the database and load the fixtures to provide initial data:
 - `python3 manage.py makemigrations khanto`
 - `python3 manage.py migrate`
-- `python3 loaddata fixtures.json`
+- `python3 manage.py loaddata fixtures.json`
 
 Start the server:
 - `python3 manage.py runserver`
